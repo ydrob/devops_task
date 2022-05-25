@@ -22,6 +22,9 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
     volumes:
       - /opt/files:/opt/files
-      - ./credentials:/root/.aws/credentials
+
