@@ -19,9 +19,9 @@ services:
         - ./nginx:/var/www/html
         - /opt/files:/opt/files
   back:
-    image: rxmllc/alpine-aws-cli
-    working_dir: /tmp
+    build:
+      context: .
+      dockerfile: ./Dockerfile
     volumes:
-      - ./back:/tmp
       - /opt/files:/opt/files
-    entrypoint: /bin/sh -c "./init.sh"
+      - ./credentials:/root/.aws/credentials
