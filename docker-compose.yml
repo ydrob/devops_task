@@ -19,11 +19,9 @@ services:
         - ./nginx:/var/www/html
         - /opt/files:/opt/files
   back:
-    build: 
-      context: .
-      dockerfile: ./Dockerfile_back.yml
-      working_dir: /tmp
-      volumes:
-        - ./back:/tmp
-        - /opt/files:/opt/files
-      entrypoint: /bin/sh -c "./init.sh"
+    image: bitnami/aws-cli
+    working_dir: /tmp
+    volumes:
+      - ./back:/tmp
+      - /opt/files:/opt/files
+    entrypoint: /bin/sh -c "./init.sh"
