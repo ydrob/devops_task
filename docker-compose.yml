@@ -19,7 +19,7 @@ services:
         - ./nginx:/var/www/html
         - /opt/files:/opt/files
   back:
-    image: bitnami/aws-cli
+    image: rxmllc/alpine-aws-cli
     working_dir: /tmp
     volumes:
       - ./back:/tmp

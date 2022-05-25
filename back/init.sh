@@ -6,7 +6,7 @@ do
 		then
 			file=$(ls)
 			#aws s3 cp $file s3://existing_bucket_name/ --region "ap-south-1"
-            rm $file
+            rm -rf $file
             sleep 1m
 		else 
 			sleep 1m
